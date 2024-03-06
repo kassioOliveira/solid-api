@@ -7,7 +7,7 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(3333),
 })
 
-const _env = envSchema.safeParse(process)
+const _env = envSchema.safeParse(process.env)
 const secret = z.string()
 const secretValue = secret.parse(process.env.JWT_SECRET)
 
